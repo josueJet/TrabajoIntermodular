@@ -1,0 +1,123 @@
+/* Variables consistentes con tu tema */
+:root {
+    --primary-color: #4361ee;
+    --danger-color: #f72585;
+    --success-color: #4cc9f0;
+    --gray-light: #f8f9fa;
+    --gray-dark: #6c757d;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset y estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #2b2d42;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.login-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+/* Encabezados */
+.login-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.login-container h2 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    color: var(--gray-dark);
+}
+
+/* Formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.login-form input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.login-form input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    padding: 14px;
+    margin-top: 10px;
+    transition: all 0.2s;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #3a56e8;
+    transform: translateY(-2px);
+}
+
+.login-form input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Placeholders con estilo */
+.login-form input::placeholder {
+    color: #adb5bd;
+    letter-spacing: 0.5px;
+}
+
+/* Mensajes de error (puedes añadir dinámicamente) */
+.error-message {
+    color: var(--danger-color);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Versión móvil */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.8rem;
+    }
+
+    .login-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .login-container h2 {
+        font-size: 1.1rem;
+    }
+}

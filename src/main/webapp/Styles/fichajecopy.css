@@ -1,0 +1,269 @@
+:root {
+    --primary-color: #4361ee;
+    --danger-color: #f72585;
+    --success-color: #4cc9f0;
+    --success-color-end: #2ecc71;
+    --danger-color-end: #e74c3c;
+    --gray-dark: #6c757d;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos generales del contenedor */
+.app-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Estilos del contenedor principal de fichaje */
+.fichaje-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.fichaje-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fichaje-header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fecha-actual {
+    font-size: 1.1em;
+    color: var(--gray-dark);
+    font-weight: 500;
+}
+
+/* Estilos mejorados para los botones */
+.fichaje-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px 0;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+    border: 1px solid #e9ecef;
+}
+
+.form-fichaje {
+    margin: 0;
+    display: inline-block;
+}
+
+.btn-fichaje {
+    padding: 15px 30px;
+    min-width: 240px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-fichaje::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.3) 100%);
+    z-index: -1;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.btn-fichaje:hover::before {
+    opacity: 1;
+}
+
+.btn-iniciar {
+    background: linear-gradient(135deg, var(--success-color) 0%, var(--success-color-end) 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(46, 204, 113, 0.4);
+}
+
+.btn-finalizar {
+    background: linear-gradient(135deg, var(--danger-color) 0%, var(--danger-color-end) 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+}
+
+.btn-fichaje:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.btn-fichaje:active {
+    transform: translateY(2px);
+}
+
+.btn-fichaje:disabled {
+    background: #bdc3c7 !important;
+    background-image: none !important;
+    color: #7f8c8d !important;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.icono-btn {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-fichaje:hover .icono-btn {
+    transform: scale(1.15);
+}
+
+.texto-btn {
+    white-space: nowrap;
+    font-weight: 600;
+    position: relative;
+    top: 1px;
+}
+
+/* Estilos del historial */
+.fichaje-historial {
+    margin-top: 40px;
+}
+
+.fichaje-historial h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.historial-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.historial-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+.historial-fecha {
+    color: var(--gray-dark);
+    font-weight: 500;
+}
+
+.historial-tipo {
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.iniciado {
+    background-color: #e3f9f5;
+    color: #0ca678;
+    border-left-color: #0ca678;
+}
+
+.finalizado {
+    background-color: #fff0f3;
+    color: #f03e3e;
+    border-left-color: #f03e3e;
+}
+
+/* Estilos del estado actual */
+.ultimo-fichaje {
+    background-color: #e8f4fc;
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+}
+
+.ultimo-fichaje h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.estado-actual {
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.en-trabajo {
+    color: var(--success-color-end);
+}
+
+.no-trabajando {
+    color: var(--danger-color-end);
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .fichaje-container {
+        padding: 20px;
+    }
+
+    .fichaje-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .btn-fichaje {
+        width: 100%;
+        min-width: auto;
+        padding: 14px 20px;
+    }
+
+    .historial-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .historial-tipo {
+        align-self: flex-start;
+    }
+}
